@@ -1,0 +1,6 @@
+#surefire_0
+#Sat Dec 13 14:25:23 EST 2014
+user.dir=C\:\\Users\\rrt\\develop\\Web-Framework\\Cnn
+localRepository=C\:\\Users\\rrt\\.m2\\repository
+CnnRunner=CnnTestRunner.xml
+basedir=C\:\\Users\\rrt\\develop\\Web-Framework\\Cnn

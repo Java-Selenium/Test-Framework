@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Cnn news media company" duration-ms="59441" started-at="2014-12-13T19:25:24Z" finished-at="2014-12-13T19:26:23Z">
+    <groups>
+    </groups>
+    <test name="Cnn Navigation tab" duration-ms="59441" started-at="2014-12-13T19:25:24Z" finished-at="2014-12-13T19:26:23Z">
+      <class name="navigation.NavTab">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:navigation.NavTab@40a04430]" name="beforeMethod" is-config="true" duration-ms="6918" started-at="2014-12-13T14:25:24Z" finished-at="2014-12-13T14:25:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testTab()[pri:0, instance:navigation.NavTab@40a04430]" name="testTab" duration-ms="51075" started-at="2014-12-13T14:25:31Z" finished-at="2014-12-13T14:26:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTab -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:navigation.NavTab@40a04430]" name="afterMethod" is-config="true" duration-ms="1429" started-at="2014-12-13T14:26:22Z" finished-at="2014-12-13T14:26:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- navigation.NavTab -->
+    </test> <!-- Cnn Navigation tab -->
+  </suite> <!-- Cnn news media company -->
+</testng-results>

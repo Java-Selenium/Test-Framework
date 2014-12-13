@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Cnn news media company]" parallel="tests">
+  <parameter name="browserVersion" value="31"/>
+  <parameter name="browserName" value="firefox"/>
+  <parameter name="OS" value="Windows 8"/>
+  <parameter name="userName" value="rahmanww"/>
+  <parameter name="useSauceLabs" value="false"/>
+  <parameter name="url" value="http://www.cnn.com"/>
+  <parameter name="key" value="e45ab198-cbcb-4f8f-89b9-639b0894e0bf"/>
+  <test name="Cnn Navigation tab(failed)" parallel="tests">
+    <classes>
+      <class name="navigation.NavTab">
+        <methods>
+          <include name="testTab"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- navigation.NavTab -->
+    </classes>
+  </test> <!-- Cnn Navigation tab(failed) -->
+</suite> <!-- Failed suite [Cnn news media company] -->
