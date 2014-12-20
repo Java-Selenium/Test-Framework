@@ -26,5 +26,6 @@ public class NavTab extends CommonApi {
             }
             webElementList = getListOfWebElement("#cnn_hdr-nav li");
         }
+
     }
 }
