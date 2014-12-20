@@ -29,7 +29,7 @@ public class CommonApi {
     @Parameters({"browserName","url"})
     @BeforeMethod
     public void beforeMethod(@Optional("chrome")String browser, @Optional("http://www.cnn.com")String url) {
-        System.setProperty("webdriver.chrome.driver", "Generic/drivers/chromedriver");
+
         driver = getLocalDriver(browser);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.navigate().to(url);
