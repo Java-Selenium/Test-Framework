@@ -1,13 +1,19 @@
 package BaseApi;
+import org.apache.commons.io.IOExceptionWithCause;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.IOException;
+import java.net.URL;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
@@ -26,15 +32,26 @@ import java.util.concurrent.TimeUnit;
 */
 public class CommonApi {
     public WebDriver driver = null;
-    @Parameters({"browserName","url"})
+    @Parameters({"useSauceLabs","url","os","browserName","browserVersion","userName","key",})
     @BeforeMethod
-    public void beforeMethod(@Optional("chrome")String browser, @Optional("http://www.cnn.com")String url) {
+    public void beforeMethod(@Optional("false")boolean useSauceLabs,@Optional("http://www.cnn.com")String url,
+                             @Optional("Windows 7")String os,
+                             @Optional("firefox")String browserName, @Optional("22")String browserVersion,
+                             @Optional("rahmanww")String userName, @Optional("e45ab198-cbcb-4f8f-89b9-639b0894e0bf")
+                             String key)throws IOException {
 
-        driver = getLocalDriver(browser);
+        if(useSauceLabs==true){
+            getSauceLabsDriver(os,browserName,browserVersion,userName,key);
+        }else{
+            getLocalDriver(browserName);
+        }
+        //driver = getLocalDriver(browser);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.navigate().to(url);
         driver.manage().window().maximize();
     }
+
+    //Local driver
     public WebDriver getLocalDriver(String browser){
         if(browser.equalsIgnoreCase("firfox")){
             driver = new FirefoxDriver();
@@ -46,6 +63,19 @@ public class CommonApi {
         }else if(browser.equalsIgnoreCase("iexplore")){
             driver = new InternetExplorerDriver();
         }
+        return driver;
+    }
+
+
+    //Saucelabs driver
+    public WebDriver getSauceLabsDriver(String OS, String browserName, String browserVersion, String userName,
+                                        String key)throws IOException {
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability("platform", OS);
+        cap.setBrowserName(browserName);
+        cap.setVersion(browserVersion);
+        this.driver = new RemoteWebDriver(new URL("http://"+userName+":"+key
+                +"@ondemand.saucelabs.com:80/wd/hub"), cap);
         return driver;
     }
 
