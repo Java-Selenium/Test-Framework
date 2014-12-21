@@ -24,11 +24,13 @@
         <processorPath useClasspath="true" />
         <module name="Cnn" />
         <module name="Generic" />
+        <module name="MetLife" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Cnn" target="1.7" />
       <module name="Generic" target="1.7" />
+      <module name="MetLife" target="1.7" />
       <module name="Web-Framework" target="1.7" />
     </bytecodeTargetLevel>
   </component>
