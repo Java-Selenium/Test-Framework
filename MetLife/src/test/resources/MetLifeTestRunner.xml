@@ -11,7 +11,7 @@
 
     <test  name= "MetLife Navigation tab">
         <classes>
-            <class name="Home"/>
+            <!--<class name="Home"/>-->
 
         </classes>
     </test>

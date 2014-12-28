@@ -53,7 +53,7 @@ public class CommonApi {
 
     //Local driver
     public WebDriver getLocalDriver(String browser){
-        if(browser.equalsIgnoreCase("firfox")){
+        if(browser.equalsIgnoreCase("firefox")){
             driver = new FirefoxDriver();
         }else if(browser.equalsIgnoreCase("chrome")){
             System.setProperty("webdriver.chrome.driver", "Generic/drivers/chromedriver");
@@ -85,6 +85,11 @@ public class CommonApi {
     }
 
     //Utility methods
+    public WebElement getWebElement(String locator){
+        WebElement element = driver.findElement(By.cssSelector(locator));
+
+        return element;
+    }
 
     public List<WebElement> getListOfWebElement(String locator){
         List<WebElement> list = driver.findElements(By.cssSelector(locator));

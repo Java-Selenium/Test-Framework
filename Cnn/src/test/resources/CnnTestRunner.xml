@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Cnn news media company" parallel="tests">
     <parameter name="url" value="http://www.cnn.com"/>
-    <parameter name="useSauceLabs" value="true"/>
+    <parameter name="useSauceLabs" value="false"/>
     <parameter name="OS" value="Windows 8"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="31"/>
@@ -13,6 +13,8 @@
         <classes>
             <!--<class name="navigation.NavTab"/>-->
             <!--<class name="navigation.Search"/>-->
+            <!--<class name="navigation.TvModule"/>-->
+            <class name="navigation.LogIn"/>
         </classes>
     </test>
 </suite>
