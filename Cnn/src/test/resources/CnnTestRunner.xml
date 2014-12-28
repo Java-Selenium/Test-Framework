@@ -14,7 +14,7 @@
             <!--<class name="navigation.NavTab"/>-->
             <!--<class name="navigation.Search"/>-->
             <!--<class name="navigation.TvModule"/>-->
-            <class name="navigation.LogIn"/>
+            <!--<class name="navigation.LogIn"/>-->
         </classes>
     </test>
 </suite>

@@ -1,7 +1,6 @@
 package navigation;
 
 import BaseApi.CommonApi;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
