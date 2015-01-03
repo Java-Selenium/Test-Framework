@@ -8,26 +8,24 @@ import org.apache.poi.ss.usermodel.Workbook;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 
 /**
  * Created by mrahman on 12/29/14.
  */
 public class DataReader {
-
+    String world, politics;
     int numberOfRows, numberOfColumn;
-    public String[][] read(String filename){
+    public String[][] read(String filename) throws IOException{
         String [][] dataContainer;
         File file = new File(filename);
-        try {
-            FileInputStream fis = new FileInputStream(file);
-        } catch(Exception ex){
-            ex.printStackTrace();
-        }
-        HSSFWorkbook wb = new HSSFWorkbook();
+        FileInputStream fis = new FileInputStream(file);
+
+        HSSFWorkbook wb = new HSSFWorkbook(fis);
         HSSFSheet sheet = wb.getSheetAt(0);
         numberOfRows = sheet.getLastRowNum();
         numberOfColumn = sheet.getRow(0).getLastCellNum();
-        dataContainer = new String[numberOfColumn][numberOfRows];
+        dataContainer = new String[numberOfRows][numberOfColumn];
 
         for(int i=0; i<dataContainer.length; i++){
             HSSFRow row = sheet.getRow(i);
